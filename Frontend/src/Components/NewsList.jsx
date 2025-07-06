@@ -7,7 +7,7 @@ const NewsList = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/article')
+      .get('https://news-app-api-pi.vercel.app/api/article')
       .then(res => setArticle(res.data))
       .catch(err => console.log(err));
   }, []);
