@@ -7,7 +7,13 @@ const adminroutes = require('./route/adminroute')
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+//app.use(cors())
+app.use(cors({
+  origin: 'https://news-app-client-chi.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true // if you're using cookies or auth headers
+}));
+
 
 mongoose.connect('mongodb+srv://praveenvirat18100:praveen2003@cluster-news.djxpjuz.mongodb.net/news-app?retryWrites=true&w=majority&appName=Cluster-News')
   .then(() => console.log('MongoDB connected successfully'))
