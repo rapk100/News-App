@@ -20,7 +20,7 @@ const NewsArticleForm = ({ setauther }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const res = await axios.post('http://localhost:5000/api/article', formData);
+			const res = await axios.post('https://news-app-api-pi.vercel.app/api/article', formData);
 			if (res.status === 201) {
 				setFormData({
 					title: '',
