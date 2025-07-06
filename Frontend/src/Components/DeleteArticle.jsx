@@ -14,14 +14,14 @@ const DeleteArticle = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/article")
+      .get("https://news-app-api-pi.vercel.app/api/article")
       .then((response) => setArticles(response.data))
       .catch((error) => console.error("Error fetching articles:", error));
   }, [deleted]);
 
   const handleDelete = async (articleId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/article/${articleId}`);
+      await axios.delete(`https://news-app-api-pi.vercel.app/api/article/${articleId}`);
       alert("Article deleted");
       setDeleted(!deleted);
     } catch (error) {
@@ -51,7 +51,7 @@ const DeleteArticle = () => {
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/article/${editingArticleId}`, editFormData);
+      await axios.put(`https://news-app-api-pi.vercel.app/api/article/${editingArticleId}`, editFormData);
       alert("Article updated successfully");
       setEditingArticleId(null);
       setDeleted(!deleted); // Refresh the articles list
