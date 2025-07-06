@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect('mongodb://localhost:27017/newsapp')
+mongoose.connect('mongodb+srv://praveenvirat18100:praveen2003@cluster-news.djxpjuz.mongodb.net/news-app?retryWrites=true&w=majority&appName=Cluster-News')
   .then(() => console.log('MongoDB connected successfully'))
   .catch(err => console.log(err))
 
